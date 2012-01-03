@@ -9,32 +9,33 @@
 <body></body>
 
 	<script type="text/javascript">
-	Ext.onReady(function(){
 
-		Ext.define('CursoExt4.aula05.Usuario', {
+	Ext.define('CursoExt4.aula05.Usuario', {
 			
-			nome : '',
-			senha : '',
+		nome : '',
+		senha : '',
 
-			constructor : function(options) {
-				
-				Ext.apply(this, options || {});
+		constructor : function(options) {
+			
+			Ext.apply(this, options || {});
 
-				console.log('construtor foi chamado');
-			},
-
-			login : function() {
-				console.log('fazendo login...');
-			},
-
-			logout : function() {
-				console.log('fazendo logout...');
-			}
+			console.log('construtor foi chamado');
 		},
-			function() {
-				console.log('callback foi chamado.');
-			}
-		);
+
+		login : function() {
+			console.log('fazendo login...');
+		},
+
+		logout : function() {
+			console.log('fazendo logout...');
+		}
+	},
+		function() {
+			console.log('callback foi chamado.');
+		}
+	);
+
+	Ext.onReady(function(){
 
 		var usuario = Ext.create('CursoExt4.aula05.Usuario', {
 			nome : 'Loiane',
