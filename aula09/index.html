@@ -1,0 +1,71 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all-dev.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+
+	Ext.define('Usuario',{
+
+		config: {
+			nome: '',
+			senha: ''
+		},
+
+		setNome: function(n){
+			this.nome = n + '*';
+		}
+	});
+
+	Ext.define('Calculadora',{
+		
+		statics: {
+			numero: 0,
+
+			soma: function(num1, num2){
+				return num1 + num2;
+			}
+		},
+
+		constructor: function(){
+			
+			this.statics().numero++;
+		}
+	});
+
+	Ext.define('Constantes',{
+
+		singleton: true,
+		
+		URL_BLOG: 'http://loiane.com',
+
+		URL_BLOG_EN: 'http://loianegroner.com',
+	});
+
+	
+	Ext.onReady(function(){
+
+		var usuario = Ext.create('Usuario');
+		usuario.setNome('Loiane');
+		usuario.setSenha('1234');
+		console.log(usuario.getNome());
+		console.log(usuario.getSenha());
+
+		console.log(Calculadora.numero);
+		var calc = Ext.create('Calculadora');
+		console.log(Calculadora.numero);
+
+		console.log(Calculadora.soma(1,2));
+
+		//var cons = Ext.create('Constantes'); //NAO PODE!!!
+
+		console.log(Constantes.URL_BLOG);
+	});
+	</script>
+
+</html>
