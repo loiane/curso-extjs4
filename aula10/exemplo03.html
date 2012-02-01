@@ -1,0 +1,29 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="extjs/ext-dev.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+
+	Ext.Loader.setConfig({
+		enabled: true,
+		paths: {
+			'CursoExt4' : 'js',
+			'Ext' : 'extjs/src'
+		}
+	});
+
+	Ext.require('CursoExt4.noDeadlock.ClasseA');
+
+	Ext.onReady(function(){
+
+		Ext.create('CursoExt4.noDeadlock.ClasseA');
+	});
+	</script>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="extjs/ext.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+
+	Ext.define('MinhaJanela',{
+		extend: 'Ext.window.Window',
+
+		title: 'Minha Janela',
+		html: 'criei uma janela',
+		height: 200,
+		width: 200,
+		autoShow: true
+	});
+	
+	Ext.onReady(function(){
+
+		Ext.create('MinhaJanela');
+	});
+	</script>
+
+</html>
