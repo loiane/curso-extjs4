@@ -1,0 +1,23 @@
+{
+	"id": 1,
+	"nome": "Loiane",
+	"sobrenome": "Groner",
+	"telefones": [
+		{
+			"id": 12,
+			"ddd": "11",
+			"numero": "1234-5678"
+		},
+		{
+			"id": 13,
+			"ddd": "19",
+			"numero": "9876-1234"
+		}
+	],
+	"endereco": {
+		"id": 14,
+		"logradouro": "rua ficticia",
+		"numero": "100",
+		"complemento": "apt 10"
+	}
+}

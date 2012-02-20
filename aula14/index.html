@@ -1,0 +1,86 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+
+	Ext.define('Pessoa',{
+		extend: 'Ext.data.Model',
+
+		fields: [
+			{name: 'id', type: 'int'},
+			{name: 'nome', type: 'string'},
+			{name: 'sobrenome', type: 'string'}
+		],
+
+		proxy: {
+			type: 'rest',
+			url: 'dados',
+			format: 'json'
+		},
+
+		hasMany: {model: 'Telefone', foreignKey: 'pessoaId'},
+
+		hasOne: {model: 'Endereco', foreignKey: 'pessoaId'}
+	});
+
+	Ext.define('Telefone',{
+		extend: 'Ext.data.Model',
+
+		fields: [
+			{name: 'id', type: 'int'},
+			{name: 'ddd', type: 'string'},
+			{name: 'numero', type: 'string'},
+			{name: 'pessoaId', type: 'int'}
+		],
+
+		belongsTo: {model: 'Pessoa', foreignKey: 'pessoaId'}
+	});
+
+	Ext.define('Endereco',{
+		extend: 'Ext.data.Model',
+
+		fields: [
+			{name: 'id', type: 'int'},
+			{name: 'logradouro', type: 'string'},
+			{name: 'numero', type: 'string'},
+			{name: 'complemento', type: 'string'},
+			{name: 'pessoaId', type: 'int'}
+		]
+	});
+	
+	Ext.onReady(function(){
+
+		Pessoa.load(1,{
+
+			success: function (pessoa){
+
+				console.log('Nome da pessoa é ' + pessoa.get('nome'));
+
+				var telefones = pessoa.telefones();
+
+				telefones.each(function (tel){
+					
+					console.log(tel.get('ddd') + ' ' + tel.get('numero'));
+
+					var p = tel.getPessoa();
+
+					console.log('Numero pertence a ' + p.get('nome'));
+				});
+
+				var end = pessoa.getEndereco();
+
+				console.log(end.get('logradouro') + ' ' + end.get('numero'));
+			}
+		});
+		
+    });
+	</script>
+
+</html>
