@@ -1,0 +1,97 @@
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all-dev.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+
+	Ext.define('Contato',{
+		extend: 'Ext.data.Model',
+
+		fields: [
+			{name: 'id', type: 'int'},
+			{name: 'meuNome', type: 'string', mapping: 'nome'},
+			{name: 'email', type: 'string'}
+		]
+	});
+
+	Ext.define('ContatosStore',{
+		extend: 'Ext.data.Store',
+		model: 'Contato',
+		proxy: {
+			type: 'ajax',
+			//url: 'php/json/listaContatos.php',
+
+			api: {
+				create: 'php/xml/criaContato.php', //CRUD
+				read: 'php/xml/listaContatos.php',
+				update: 'php/xml/atualizaContato.php',
+				destroy: 'php/xml/deletaContato.php',
+			},
+			
+			reader: {
+				type: 'xml', //json ou xml
+				root: 'contatos',
+				record: 'contato'
+			},
+
+			writer: {
+				type: 'xml', //json ou xml
+				documentRoot: 'contatos',
+				record: 'contato',
+				writeAllFields: true,
+				encode: true,
+				nameProperty: 'mapping'
+			}
+		},
+		autoLoad: true,
+
+		autoSync: true
+	})
+	
+	Ext.onReady(function(){
+
+
+		var store = Ext.create('ContatosStore');
+
+		//console.log(store.data);
+
+		store.on('load', function(s){
+
+			console.log(s.data);
+
+			var contato = Ext.create('Contato',{
+				nome: 'Loiane3',
+				email: 'me@loiane.com'
+			});
+
+			//CREATE
+			//s.add(contato); //s.add({nome: 'Loiane2', email: 'me@loiane.com'});
+			//s.insert(0,contato); //insere contato na primeira posição da store
+
+			//UPDATE
+			var contatoAtualizado = s.getAt(0); //s.get(14)
+			contatoAtualizado.set('meuNome', 'dfgdfg');
+
+			//DELETE
+			//s.remove(modelo);
+			//s.removeAt(index);
+			//s.removeAll(silent); //remove tudo //silent == true ou false
+			//s.remove(s.getAt(2));
+
+			//s.sync();
+
+
+		});
+		
+    });
+	</script>
+
+</html>
