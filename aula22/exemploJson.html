@@ -1,0 +1,89 @@
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+
+	Ext.define('Contato',{
+		extend: 'Ext.data.Model',
+
+		fields: [
+			{name: 'id', type: 'int'},
+			{name: 'nome', type: 'string'},
+			{name: 'email', type: 'string'}
+		]
+	});
+
+	Ext.define('ContatosStore',{
+		extend: 'Ext.data.Store',
+		model: 'Contato',
+		proxy: {
+			type: 'rest',
+
+			url: 'php/json/contatos.php', //todas op CRUD!!!
+			
+			reader: {
+				type: 'json', //json ou xml
+				root: 'contatos'
+			},
+
+			writer: {
+				type: 'json', //json ou xml
+				root: 'contatos',
+				writeAllFields: true,
+				encode: true,
+				allowSingle: true
+			}
+		},
+		autoLoad: true,
+
+		autoSync: true
+	})
+	
+	Ext.onReady(function(){
+
+
+		var store = Ext.create('ContatosStore');
+
+		//console.log(store.data);
+
+		store.on('load', function(s){
+
+			console.log(s.data);
+
+			var contato = Ext.create('Contato',{
+				nome: 'Loiane2',
+				email: 'me@loiane.com'
+			});
+
+			//CREATE
+			//s.add(contato); //s.add({nome: 'Loiane2', email: 'me@loiane.com'});
+			//s.insert(0,contato); //insere contato na primeira posição da store
+
+			//UPDATE
+			//var contatoAtualizado = s.getAt(0); //s.get(14)
+			//contatoAtualizado.set('nome', 'Loiane');
+
+			//DELETE
+			//s.remove(modelo);
+			//s.removeAt(index);
+			//s.removeAll(silent); //remove tudo //silent == true ou false
+			s.remove(s.getAt(2));
+
+			//s.sync();
+
+
+		});
+		
+    });
+	</script>
+
+</html>
