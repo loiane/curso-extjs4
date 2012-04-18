@@ -1,0 +1,85 @@
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all.js"></script>
+
+</head>
+
+<body><div id="contatos" style="padding: 20px;"></div></body>
+
+	<script type="text/javascript">
+
+	Ext.define('Contato',{
+		extend: 'Ext.data.Model',
+
+		fields: [
+			{name: 'id', type: 'int'},
+			{name: 'nome', type: 'string'},
+			{name: 'email', type: 'string'}
+		]
+	});
+
+	Ext.define('ContatosStore',{
+		extend: 'Ext.data.Store',
+		model: 'Contato',
+		proxy: {
+			type: 'ajax',
+
+			url: 'php/listaContatos.php',
+			
+			reader: {
+				type: 'json',
+				root: 'contatos'
+			}
+
+		},
+		autoLoad: true
+
+
+
+		/*sorters: [{
+			property: 'nome',
+			direction: 'ASC'
+		}]*/
+
+		//remoteSort: true
+
+		/*filters: [{
+			property: 'nome',
+			value: 'Alberto'
+		}]*/
+	});
+	
+	Ext.onReady(function(){
+
+
+		var store = Ext.create('ContatosStore');
+
+		//console.log(store.data);
+
+		store.on('load', function(s){
+
+			console.log(s.data);
+
+			s.sort('nome', 'DESC');
+
+			s.filter('nome', 'Alberto');
+
+			var tpl = Ext.create('Ext.XTemplate',
+				'<h1>Contatos:</h1>',
+				'<tpl for=".">',
+				'<p>{data.id} - {data.nome} - {data.email}',
+				'</tpl>'
+			);
+
+			tpl.overwrite('contatos', s.data.items);
+
+		});
+		
+    });
+	</script>
+
+</html>
