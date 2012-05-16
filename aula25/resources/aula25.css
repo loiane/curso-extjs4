@@ -1,0 +1,11 @@
+body {
+	padding: 30px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+.icon-heart {
+	background-image: url(images/heart.png);
+}
