@@ -1,0 +1,18 @@
+body {
+	padding: 30px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+/*buttons*/
+.x-btn-default-large .add {
+    background-image: url(images/add.gif) !important;
+}
+.icone {
+    background-image: url(images/add16.gif) !important;
+}
+.x-btn-default-medium .add {
+    background-image: url(images/add24.gif) !important;
+}}
