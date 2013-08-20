@@ -16,8 +16,8 @@ Ext.define('Curso.Janela',{
 		{
 			xtype: 'panel',
 			title: 'Painel 1',
-			//anchor: '100%, 25%'
-			anchor: '-50, -150'
+			anchor: '100%, 25%'
+			//anchor: '-50, -150'
 		},
 		{
 			xtype: 'panel',
