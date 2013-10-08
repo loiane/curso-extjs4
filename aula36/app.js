@@ -42,7 +42,7 @@ Ext.define('Curso.Janela',{
 			title: 'Painel 4',
 			html: 'regiao norte',
 			region: 'north',
-			width: '150',
+			height: '150',
 			collapsible: true,
 			split: true
 		},
@@ -51,7 +51,7 @@ Ext.define('Curso.Janela',{
 			title: 'Painel 5',
 			html: 'regiao sul',
 			region: 'south',
-			width: '150',
+			height: '150',
 			collapsible: true,
 			split: true
 		}
