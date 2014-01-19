@@ -10,7 +10,7 @@ $user = "root";
 $senha = "root";
  
 //nome da base de dados
-$db = "cursoextjs4";
+$db = "sencha";
  
 //executa a conexão com o banco, caso contrário mostra o erro ocorrido
 $conexao = mysql_connect($servidor,$user,$senha) or die (mysql_error());

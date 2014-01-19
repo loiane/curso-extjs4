@@ -1,16 +1,16 @@
 <?php
-//chama o arquivo de conexão com o bd
-include("conectar.php");
+//connect to db
+include("db.php");
  
-//consulta sql
-$query = mysql_query("SELECT * FROM Contato") or die(mysql_error());
+//sql query
+$query = mysql_query("SELECT * FROM Contact") or die(mysql_error());
  
-//faz um looping e cria um array com os campos da consulta
+//interates the result and creates an array with each row
 $rows = array();
-while($contato = mysql_fetch_assoc($query)) {
-    $rows[] = $contato;
+while($contact = mysql_fetch_assoc($query)) {
+    $rows[] = $contact;
 }
 
-//encoda para formato JSON
+//JSON
 echo json_encode($rows);
 ?>

@@ -1,13 +1,13 @@
 <?php
 header('Content-type: text/xml');
 
-//chama o arquivo de conexão com o bd
-include("conectar.php");
+//connect to db
+include("db.php");
  
-//consulta sql
-$query = mysql_query("SELECT * FROM Contato") or die(mysql_error());
+//sql query
+$query = mysql_query("SELECT * FROM Contact") or die(mysql_error());
  
-//faz um looping e cria um xml com os campos da consulta
+//interates the result and creates an array with each row
 $xml = '<?xml version="1.0" encoding="iso-8859-1" ?>';
 $xml.="<contatos>";
 
