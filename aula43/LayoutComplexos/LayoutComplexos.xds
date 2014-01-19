@@ -1,0 +1,47 @@
+{
+    "name": "LayoutComplexos",
+    "settings": {
+        "cmd": {
+            "license": "gpl",
+            "cmdVersion": "4.0.1.45",
+            "frameworkVersion": "4.2.1.883"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "3.0.0",
+    "xdsBuild": 1337,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000003,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "c242d9a1-d7c4-4a14-b38f-cadb62f7f258"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "7e8b25fd-5944-44bb-b7e1-3aecc71a9d0a",
+            "875d335a-d0b6-4a2d-a3cf-e32f8a45f3bf"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

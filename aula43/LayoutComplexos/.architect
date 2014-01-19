@@ -1,0 +1,103 @@
+{
+    "expandedState": {
+        "data": true,
+        "model": true,
+        "component": true,
+        "controller": true,
+        "resource": true,
+        "c242d9a1-d7c4-4a14-b38f-cadb62f7f258": {
+            "id": "c242d9a1-d7c4-4a14-b38f-cadb62f7f258",
+            "cn": [
+                {
+                    "id": "de8b5bd1-29f9-42a7-8e86-082ac2fdcee3",
+                    "cn": [
+                        {
+                            "id": "aa03820a-76f2-47b9-b1e5-dca7441d9c6b",
+                            "cn": [
+                                {
+                                    "id": "2119546d-1db3-4897-acb3-1e200e6c700a"
+                                },
+                                {
+                                    "id": "ffd2013a-393a-4b20-90f6-ba729ebe5a2f"
+                                },
+                                {
+                                    "id": "df9e4570-eb9e-4943-878d-89d1afa70198"
+                                },
+                                {
+                                    "id": "2f91cbca-c077-4a85-856a-f1bc0b6e76fd"
+                                },
+                                {
+                                    "id": "d7579354-e1e7-4dad-bb24-812dfbd53d87"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "90080b03-5fe9-4cfa-b452-6cfd405523a7",
+                            "cn": [
+                                {
+                                    "id": "5f407bd8-db52-47cb-b87c-84edbe0bffcc",
+                                    "cn": [
+                                        {
+                                            "id": "ff978eee-7c0c-4135-93e9-72809ce14c66"
+                                        },
+                                        {
+                                            "id": "64b1b67a-9760-41cf-93e4-74ffa9d9cbf2"
+                                        },
+                                        {
+                                            "id": "b6498072-6c35-419c-8205-c2dc25478642"
+                                        },
+                                        {
+                                            "id": "d6c59399-48b8-4823-ae6c-2f45393bb215"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "43e4961a-df84-412b-95b4-0c7049d5d058",
+                                    "cn": [
+                                        {
+                                            "id": "52eb5a14-0867-465e-8398-91a10a212b87"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "7f847024-7b58-4bd8-8e42-488d9a0e9d70",
+                    "cn": [
+                        {
+                            "id": "66d91569-5577-4c36-8888-da2ff6a76151"
+                        }
+                    ]
+                },
+                {
+                    "id": "675dc1b1-3378-4745-8041-d9d78137b319"
+                }
+            ]
+        },
+        "7e8b25fd-5944-44bb-b7e1-3aecc71a9d0a": {
+            "id": "7e8b25fd-5944-44bb-b7e1-3aecc71a9d0a"
+        },
+        "875d335a-d0b6-4a2d-a3cf-e32f8a45f3bf": {
+            "id": "875d335a-d0b6-4a2d-a3cf-e32f8a45f3bf"
+        }
+    },
+    "tabState": {
+        "openTabs": [
+            "c242d9a1-d7c4-4a14-b38f-cadb62f7f258"
+        ]
+    },
+    "canvasState": {
+        "topInstance": "c242d9a1-d7c4-4a14-b38f-cadb62f7f258"
+    },
+    "inspectorState": {
+        "topInstance": "c242d9a1-d7c4-4a14-b38f-cadb62f7f258",
+        "selectedInstance": "de8b5bd1-29f9-42a7-8e86-082ac2fdcee3"
+    },
+    "codeState": {
+        "topInstance": "c242d9a1-d7c4-4a14-b38f-cadb62f7f258"
+    },
+    "editMode": "design",
+    "userSettings": {}
+}
